@@ -16,4 +16,13 @@ contract MyNFT {
     // Token ID缓存值，每次创建Token时，用该值作为新增Token的ID
     // 1 作为第一个ID，每次创建token后，值会增加
     uint256 nextTokenId = 1;
+
+    // 定义创建（发行）NFT的函数
+    // 使用memory来定义变量，相当于把变量的值，复制一份，供函数使用。函数运行结束后该数据会清空。
+    // 这么做的目的，是避免传入指针时，在函数中操作指针，影响到远来的数据
+    function mint(string memory name, string memory description) 
+        public 
+        returns (uint256) {
+        
+    }
 }
