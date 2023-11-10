@@ -9,4 +9,7 @@ contract MyNFT {
         string description; // Token描述
         string owner;       // Token拥有者
     }
+
+    // 为每个token创建一个Token ID
+    mapping(uint256 => Token) private tokens;
 }
