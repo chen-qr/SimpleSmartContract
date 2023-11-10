@@ -23,6 +23,7 @@ contract MyNFT {
     function mint(string memory name, string memory description) 
         public 
         returns (uint256) {
-        
+        // 创建一个Token
+        Token memory newNFT = Token(name, description, msg.sender);
     }
 }
