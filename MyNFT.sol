@@ -25,5 +25,8 @@ contract MyNFT {
         returns (uint256) {
         // 创建一个Token
         Token memory newNFT = Token(name, description, msg.sender);
+        // 保存新的NFT
+        tokens[nextTokenId] = newNFT;
+        nextTokenId += 1;
     }
 }
