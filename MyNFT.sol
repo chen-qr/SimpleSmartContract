@@ -27,6 +27,9 @@ contract MyNFT {
         Token memory newNFT = Token(name, description, msg.sender);
         // 保存新的NFT
         tokens[nextTokenId] = newNFT;
+        // 缓存ID值自增
         nextTokenId += 1;
+        // 返回新NFT的ID
+        return nextTokenId - 1;
     }
 }
