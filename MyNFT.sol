@@ -7,7 +7,7 @@ contract MyNFT {
     struct Token {
         string name;        // Token名称
         string description; // Token描述
-        string owner;       // Token拥有者
+        address owner;       // Token拥有者
     }
 
     // 为每个token创建一个Token ID，通过Token ID来检索Token
@@ -45,5 +45,12 @@ contract MyNFT {
         // 根据tokenid检索NFT信息
         // 使用memory store temporary data，减少gas fee
         Token memory token = tokens[_tokenId];
+        
+        // 返回数据
+        // name ，description，owner 这三个变量，已经在函数的returns中定义了，就无须再定义
+        // 直接给这三个变量赋值后，会自动return这三个变量
+        name = token.name;
+        description = token.description;
+        owner = token.owner;
     }
 }
