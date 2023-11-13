@@ -40,6 +40,7 @@ contract MyNFT {
             string memory name, string memory description, address owner
         ) 
     {
-        // todo
+        // 检验参数_tokenId
+        require(_tokenId >= 1 && _tokenId < nextTokenId, "Invalid token ID");
     }
 }
