@@ -42,5 +42,8 @@ contract MyNFT {
     {
         // 检验参数_tokenId
         require(_tokenId >= 1 && _tokenId < nextTokenId, "Invalid token ID");
+        // 根据tokenid检索NFT信息
+        // 使用memory store temporary data，减少gas fee
+        Token memory token = tokens[_tokenId];
     }
 }
