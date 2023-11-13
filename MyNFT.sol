@@ -32,4 +32,14 @@ contract MyNFT {
         // 返回新NFT的ID
         return nextTokenId - 1;
     }
+
+    // 创建查询NFT信息的函数
+    function getNFT(uint256 _tokenId) public
+        view // 只读函数，不修改state variables
+        returns (
+            string memory name, string memory description, address owner
+        ) 
+    {
+        // todo
+    }
 }
