@@ -13,6 +13,9 @@ contract MyNFT {
     // 为每个token创建一个Token ID，通过Token ID来检索Token
     mapping(uint256 => Token) private tokens;
 
+    // 创建钱包，保存每一位用户的地址所拥有的NFTs的ID
+    mapping(address => uint256[]) private ownerTokens;
+
     // Token ID缓存值，每次创建Token时，用该值作为新增Token的ID
     // 1 作为第一个ID，每次创建token后，值会增加
     uint256 nextTokenId = 1;
