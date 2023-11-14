@@ -64,6 +64,6 @@ contract MyNFT {
         view 
         returns (uint256[] memory) 
     {
-
+        return ownerTokens[_owner];
     }
 }
