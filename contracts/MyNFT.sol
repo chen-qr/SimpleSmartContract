@@ -30,6 +30,8 @@ contract MyNFT {
         Token memory newNFT = Token(name, description, msg.sender);
         // 保存新的NFT
         tokens[nextTokenId] = newNFT;
+        // 更新sender的钱包下的NFT
+        ownerTokens[msg.sender].push(nextTokenId);
         // 缓存ID值自增
         nextTokenId += 1;
         // 返回新NFT的ID
