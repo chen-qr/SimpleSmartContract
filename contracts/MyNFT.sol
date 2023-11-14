@@ -58,4 +58,12 @@ contract MyNFT {
         description = token.description;
         owner = token.owner;
     }
+
+    // 创建查询用户钱包的函数
+    function getTokensByOwner(address _owner) public 
+        view 
+        returns (uint256[] memory) 
+    {
+
+    }
 }
