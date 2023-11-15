@@ -68,9 +68,10 @@ contract MyNFT {
     }
 
     // 创建删除用户钱包中的NFT的函数
-    function deleteById(uint256 _tokenId) 
+    function deleteById(address account, uint256 _tokenId) 
         internal // 因为删除操作，会影响到state variables，所以用internal
     {
+        require(account == msg.sender, "Only can delete sender's");
         // 创建storage变量，这样改动ownerTokenList时，也会同步改动ownerTokens[msg.sender]
         uint256[] storage ownerTokenList = ownerTokens[msg.sender];
         // 循环遍历ownerTokenList
@@ -100,5 +101,7 @@ contract MyNFT {
         require(token.owner == msg.sender, "You don't own this token");
         // 更新NFT的拥有者
         token.owner = _to;
+        // 从钱包中删除NFT
+        deleteById(msg.sender, _tokenId);
     }
 }
