@@ -81,6 +81,8 @@ contract MyNFT {
                 // 先将最后一个位置的元素，复制到i位置，再将最后一个元素删除
                 ownerTokenList[i] = ownerTokenList[ownerTokenList.length - 1];
                 ownerTokenList.pop();
+                // 退出循环
+                break;
             }
         }
     }
