@@ -75,6 +75,10 @@ contract MyNFT {
         uint256[] storage ownerTokenList = ownerTokens[msg.sender];
         // 循环遍历ownerTokenList
         for (uint256 i = 0; i < ownerTokenList.length; i++) {
+            // 如果ownerTokenList中的元素等于_tokenId，就删除
+            if (ownerTokenList[i] == _tokenId) {
+                
+            }
         }
     }
 }
