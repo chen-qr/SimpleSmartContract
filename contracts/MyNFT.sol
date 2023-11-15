@@ -77,7 +77,10 @@ contract MyNFT {
         for (uint256 i = 0; i < ownerTokenList.length; i++) {
             // 如果ownerTokenList中的元素等于_tokenId，就删除
             if (ownerTokenList[i] == _tokenId) {
-                
+                // 从ownerTokenList删除i位置的元素
+                // 先将最后一个位置的元素，复制到i位置，再将最后一个元素删除
+                ownerTokenList[i] = ownerTokenList[ownerTokenList.length - 1];
+                ownerTokenList.pop();
             }
         }
     }
