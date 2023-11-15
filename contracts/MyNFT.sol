@@ -66,4 +66,12 @@ contract MyNFT {
     {
         return ownerTokens[_owner];
     }
+
+    // 创建删除用户钱包中的NFT的函数
+    function deleteById(address account, uint256 _tokenId) 
+        internal // 因为删除操作，会影响到state variables，所以用internal
+    {
+        // 创建storage变量，这样改动ownerTokenList时，也会同步改动ownerTokens[msg.sender]
+        uint256[] storage ownerTokenList = ownerTokens[msg.sender];
+    }
 }
