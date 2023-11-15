@@ -73,5 +73,8 @@ contract MyNFT {
     {
         // 创建storage变量，这样改动ownerTokenList时，也会同步改动ownerTokens[msg.sender]
         uint256[] storage ownerTokenList = ownerTokens[msg.sender];
+        // 循环遍历ownerTokenList
+        for (uint256 i = 0; i < ownerTokenList.length; i++) {
+        }
     }
 }
