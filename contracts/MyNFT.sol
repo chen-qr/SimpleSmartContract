@@ -94,5 +94,9 @@ contract MyNFT {
         require(_to != address(0), "Invalid recipient");
         // 检查tokenId是否有效
         require(_tokenId >= 1 && _tokenId < nextTokenId, "Invalid token ID");
+        // 根据tokenId，找到对应的NFT，保存到storage中，方便后续修改
+        Token storage token = tokens[_tokenId];
+        // 检查token的拥有者，是不是函数的调用者
+        require(token.owner == msg.sender, "You don't own this token");
     }
 }
