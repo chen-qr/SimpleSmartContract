@@ -86,4 +86,11 @@ contract MyNFT {
             }
         }
     }
+
+    // 创建允许用户向其他用户传输NFT的函数
+    function transfer(address _to, uint256 _tokenId) public
+    {
+        // 检查收件人的地址是否有效
+        require(_to != address(0), "Invalid recipient");
+    }
 }
