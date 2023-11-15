@@ -92,5 +92,7 @@ contract MyNFT {
     {
         // 检查收件人的地址是否有效
         require(_to != address(0), "Invalid recipient");
+        // 检查tokenId是否有效
+        require(_tokenId >= 1 && _tokenId < nextTokenId, "Invalid token ID");
     }
 }
