@@ -98,5 +98,7 @@ contract MyNFT {
         Token storage token = tokens[_tokenId];
         // 检查token的拥有者，是不是函数的调用者
         require(token.owner == msg.sender, "You don't own this token");
+        // 更新NFT的拥有者
+        token.owner = _to;
     }
 }
