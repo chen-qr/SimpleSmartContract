@@ -103,5 +103,16 @@ contract MyNFT {
         token.owner = _to;
         // 从钱包中删除NFT
         deleteById(msg.sender, _tokenId);
+        // 添加NFT
+        ownerTokens[_to].push(_tokenId);
+    }
+
+    // 创建函数销毁NFT
+    function burn(uint256 _tokenId) public {
+        require(_tokenId >= 1 && _tokenId < nextTokenId, "Invalid Token ID");
+        Token storage token = tokens[_tokenId];
+        require(token.owner == msg.sender, "You don't own this token");
+        deleteById(msg.sender, _tokenId);
+        delete tokens[_tokenId];
     }
 }
