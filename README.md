@@ -1,4 +1,4 @@
-# SolidityMyNFT
+# Simple NFT
 
 ## 项目结构
 
