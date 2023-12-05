@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.17;
 
-contract MyNFT {
+contract SimpleNFT {
 
     // Token用来保存NFT的信息
     struct Token {
