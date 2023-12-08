@@ -31,6 +31,12 @@ npx hardhat compile
 
 执行命令后，在 `./artifacts`目录下生成编译后的智能合约。
 
+### 测试智能合约
+
+```shell
+npx hardhat test
+```
+
 ### 部署智能合约
 
 ```shell
