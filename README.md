@@ -12,6 +12,8 @@ Simple Smart Contract 是一个适合新手，开发智能合约的项目。
 npx hardhat node
 ```
 
+执行命令后，会在本地启动以太坊开发网络，可以在钱包（例如MetaMask）中连接此网络。
+
 ### 编译
 
 ```shell
